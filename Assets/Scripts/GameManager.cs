@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     private Text[] _rollText = new Text[21];
     private Text[] _frameText = new Text[10];
 
+    public bool needRestart = false;
+
     void Start ()
     {
         _playerScore = GameObject.FindWithTag("Player").GetComponent<PlayerScore>();
         _displayScore = GameObject.Find("Canvas").transform.GetChild(0).gameObject.GetComponent<DisplayScore>();
+        
     }
 	
     public void UpdateScoreUI() {
@@ -36,5 +39,7 @@ public class GameManager : MonoBehaviour
         } catch {
             Debug.LogWarning ("FillRollCard failed");
         }
+
+        needRestart = _playerScore.rolls.Count == 21;
     }
 }

@@ -44,6 +44,9 @@ public class PlayerScore : MonoBehaviour
                 frames.Add (10 + scoreNext);
             }
         }
+        if (rolls.Count == 21) 
+            frames[frames.Count-1] += rolls[20];
+
         return frames;
     }
 

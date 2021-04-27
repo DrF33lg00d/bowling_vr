@@ -136,7 +136,6 @@ public class BowlingSystem : MonoBehaviour
 
         _setter.SetPinsToStart();
         manager.UpdateScoreUI();
-
     }
     
 }
