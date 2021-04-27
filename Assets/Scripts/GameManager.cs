@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
                 _rollText[i] = vsp[i];
             }
             
-            vsp = _displayScore.FillFrames(_playerScore.ScoreCumulative());
+            vsp = _displayScore.FillFrames(_playerScore.ScoreFrames());
             
             for (int i = 0; i < vsp.Length; i++)
             {

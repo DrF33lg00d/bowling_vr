@@ -40,6 +40,7 @@ public class DisplayScore : MonoBehaviour
                 output += "X";
             } else if (rolls[i] == 10) {							// STRIKE in frame 1-9
                 output += "X ";
+                i++;
             } else {
                 output += rolls[i].ToString();						// Normal 1-9 bowl
             }
