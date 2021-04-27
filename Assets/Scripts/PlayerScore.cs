@@ -25,7 +25,7 @@ public class PlayerScore : MonoBehaviour
     }
 
 
-    public List<int> ScoreFrames () {
+    public List<int> ScoreFrames() {
         List<int> frames = new List<int>();
 
         // Index i points to 2nd bowl of frame
@@ -47,5 +47,19 @@ public class PlayerScore : MonoBehaviour
         }
         return frames;
     }
-    
+
+    public List<int> ScoreCumulative()
+    {
+        List<int> cumulativeScores = new List<int>();
+        int runningTotal = 0;
+
+        foreach (int frameScore in ScoreFrames())
+        {
+            runningTotal += frameScore;
+            cumulativeScores.Add(runningTotal);
+        }
+
+        return cumulativeScores;
+    }
+
 }

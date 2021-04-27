@@ -4,20 +4,24 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = System.Object;
 
 public class BowlingSystem : MonoBehaviour
 {
     public List<GameObject> balls;
+    public Transform ballSpawnLocation;
     public GameObject pinsPosition;
     public GameObject pinsPrefab;
     public PlayerScore player;
+    public GameManager manager;
     
     private GameObject _deletedBall;
     private float _timer;
     private bool _needCount = false;
     private bool _isFirstRoll = true;
     private PinSetter _setter;
+    
 
 
 
@@ -28,6 +32,7 @@ public class BowlingSystem : MonoBehaviour
         Instantiate(pinsPrefab, pinsPosition.transform.position, Quaternion.identity, transform);
         _setter.FindPins();
         player = player.GetComponent<PlayerScore>();
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -38,8 +43,8 @@ public class BowlingSystem : MonoBehaviour
         if (_timer > 5f && _deletedBall)
         {
             //position to spawn ball
-            Vector3 spawnPosition = new Vector3(0, 1.2f, 21);
-            Instantiate(_deletedBall, spawnPosition, Quaternion.identity);
+            Vector3 spawnBallLocation = ballSpawnLocation.transform.position + new Vector3(0, 0.2f, 0);
+            Instantiate(_deletedBall, spawnBallLocation, Quaternion.identity);
             _deletedBall = null;
         }
 
@@ -130,7 +135,8 @@ public class BowlingSystem : MonoBehaviour
         _isFirstRoll = isStrike || !_isFirstRoll;
 
         _setter.SetPinsToStart();
-        
+        manager.UpdateScoreUI();
+
     }
     
 }
