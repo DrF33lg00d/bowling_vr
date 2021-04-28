@@ -46,6 +46,15 @@ public class PinSetter : MonoBehaviour
             pin.gameObject.SetActive(true);
         }
     }
+    
+    public void ResetAndHide()
+    {
+        foreach (Pin pin in pins)
+        {
+            pin.MoveToStart();
+            pin.gameObject.SetActive(false);
+        }
+    }
 
     public void SetPinsToStart()
     {

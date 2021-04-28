@@ -44,16 +44,5 @@ public class Pin : MonoBehaviour
         Transform currentTransform = transform;
         currentTransform.position = startPosition;
         currentTransform.rotation = startRotation;
-       ;
     }
-
-
-
-    // void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.name == "ball" && isSettled)
-    //     {
-    //         isSettled = false;
-    //     }
-    // }
 }

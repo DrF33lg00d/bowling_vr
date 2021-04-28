@@ -22,10 +22,6 @@ public class BowlingSystem : MonoBehaviour
     private bool _isFirstRoll = true;
     private PinSetter _setter;
     
-
-
-
-
     void Start()
     {
         _setter = gameObject.AddComponent<PinSetter>();
@@ -33,6 +29,7 @@ public class BowlingSystem : MonoBehaviour
         _setter.FindPins();
         player = player.GetComponent<PlayerScore>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        manager.SetPinSetter(_setter);
     }
 
     void Update()

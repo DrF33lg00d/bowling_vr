@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,10 +34,10 @@ public class DisplayScore : MonoBehaviour
             int box = output.Length + 1;							// Score box 1 to 21 
 
             if (rolls[i] == 0) {									// Always enter 0 as -
-                output += "-";
-            } else if ((box%2 == 0 || box == 21) && rolls[i-1]+rolls[i] == 10) {	// SPARE
+                                         // output += "-";
+            } else if ((box%2 == 0 || box == 22) && rolls[i-1]+rolls[i] == 10) {	// SPARE
                 output += "/";	
-            } else if (box >= 19 && rolls[i] == 10)	{				// STRIKE in frame 10
+            } else if (box >= 21 && rolls[i] == 10)	{				// STRIKE in frame 10
                 output += "X";
             } else if (rolls[i] == 10) {							// STRIKE in frame 1-9
                 output += "X ";
@@ -45,7 +46,7 @@ public class DisplayScore : MonoBehaviour
                 output += rolls[i].ToString();						// Normal 1-9 bowl
             }
         }
-	
+        
         return output;
     }
 }
