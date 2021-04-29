@@ -34,7 +34,7 @@ public class DisplayScore : MonoBehaviour
             int box = output.Length + 1;							// Score box 1 to 21 
 
             if (rolls[i] == 0) {									// Always enter 0 as -
-                                         // output += "-";
+                output += "-";
             } else if ((box%2 == 0 || box == 22) && rolls[i-1]+rolls[i] == 10) {	// SPARE
                 output += "/";	
             } else if (box >= 21 && rolls[i] == 10)	{				// STRIKE in frame 10
