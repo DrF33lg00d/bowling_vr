@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Pipes;
@@ -7,7 +8,6 @@ using UnityEngine.UI;
 public class DisplayScore : MonoBehaviour
 {
     public Text[] rollTexts, frameTexts;
-
     
 
     public Text[] FillRolls (List<int> rolls) {

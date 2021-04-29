@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public void SetPinSetter(PinSetter pins)
     {
         _setter = pins;
-        
     }
 
     private void Update()
