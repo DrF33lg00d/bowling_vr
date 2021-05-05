@@ -1509,6 +1509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 654533900}
   - component: {fileID: 654533899}
+  - component: {fileID: 654533901}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1543,6 +1544,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654533901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654533898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bff62d2d471c6c459e5c16b2b4fb734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rolls: 
 --- !u!1 &694188947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,7 +1922,7 @@ MonoBehaviour:
   ballSpawnLocation: {fileID: 1099574279}
   pinsPosition: {fileID: 1118850588}
   pinsPrefab: {fileID: 3793036238507190259, guid: f041d034e3abf0d45ab5184b27c64a0d, type: 3}
-  player: {fileID: 1253409465}
+  player: {fileID: 0}
   manager: {fileID: 654533899}
 --- !u!4 &763966742
 Transform:
@@ -3867,7 +3881,6 @@ GameObject:
   - component: {fileID: 1253409466}
   - component: {fileID: 1253409464}
   - component: {fileID: 1253409467}
-  - component: {fileID: 1253409465}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Player
@@ -3929,19 +3942,6 @@ MonoBehaviour:
   m_Controllers:
   - {fileID: 1167681434}
   m_DeadZone: 0.75
---- !u!114 &1253409465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253409461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bff62d2d471c6c459e5c16b2b4fb734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rolls: 
 --- !u!114 &1253409466
 MonoBehaviour:
   m_ObjectHideFlags: 0

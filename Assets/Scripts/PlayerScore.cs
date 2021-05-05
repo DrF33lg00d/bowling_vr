@@ -8,10 +8,6 @@ public class PlayerScore : MonoBehaviour
 {
     public List<int> rolls;
     private bool _isLastSpare = false;
-    void Start()
-    {
-        rolls = new List<int>();
-    }
 
     public void AddResultRoll(int countStanding, bool isFirst)
     {

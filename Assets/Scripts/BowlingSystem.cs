@@ -13,7 +13,6 @@ public class BowlingSystem : MonoBehaviour
     public Transform ballSpawnLocation;
     public GameObject pinsPosition;
     public GameObject pinsPrefab;
-    public PlayerScore player;
     public GameManager manager;
     
     private GameObject _deletedBall;
@@ -21,13 +20,15 @@ public class BowlingSystem : MonoBehaviour
     private bool _needCount = false;
     private bool _isFirstRoll = true;
     private PinSetter _setter;
+    private PlayerScore _player;
+
     
     void Start()
     {
         _setter = gameObject.AddComponent<PinSetter>();
         Instantiate(pinsPrefab, pinsPosition.transform.position, Quaternion.identity, transform);
         _setter.FindPins();
-        player = player.GetComponent<PlayerScore>();
+        _player = GameObject.Find("GameManager").GetComponent<PlayerScore>();
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         manager.SetPinSetter(_setter);
     }
@@ -115,17 +116,17 @@ public class BowlingSystem : MonoBehaviour
         
         if (isStrike)
         {
-            player.AddStrike();
+            _player.AddStrike();
             _setter.ResetAllPins();
         }
         else if (_isFirstRoll)
         {
-            player.AddResultRoll(standingPins, _isFirstRoll);
+            _player.AddResultRoll(standingPins, _isFirstRoll);
             _setter.ResetStandingPins();
         }
         else
         {
-            player.AddResultRoll(standingPins, _isFirstRoll);
+            _player.AddResultRoll(standingPins, _isFirstRoll);
             _setter.ResetAllPins();
         }
         

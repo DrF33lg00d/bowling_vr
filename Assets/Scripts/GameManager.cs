@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
-        _playerScore = GameObject.FindWithTag("Player").GetComponent<PlayerScore>();
+        _playerScore = GetComponent<PlayerScore>();
         _displayScore = GameObject.Find("Canvas").transform.GetChild(0).gameObject.GetComponent<DisplayScore>();
     }
 
