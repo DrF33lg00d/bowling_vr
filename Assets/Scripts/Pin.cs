@@ -21,7 +21,11 @@ public class Pin : MonoBehaviour
 
     public bool IsStanding()
     {
-        return startRotation.Compare(transform.rotation, 10);
+        int accuracy = 10;
+        Quaternion q2 = transform.rotation;
+        bool x = (int)(startRotation.x * accuracy) == (int)(q2.x * accuracy);
+        bool z = (int)(startRotation.z * accuracy) == (int)(q2.z * accuracy);
+        return x && z;
     }
 
     public void RaiseIfStanding()
