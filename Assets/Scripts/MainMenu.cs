@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private Button startGame;
-    [SerializeField] private Button startTest;
-    [SerializeField] private Button exitGame;
-    [SerializeField] private Slider soundSlider;
-
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("FirstGameHall");
+    }
+    
     public void LoadTestScene()
     {
         SceneManager.LoadScene("Test");
