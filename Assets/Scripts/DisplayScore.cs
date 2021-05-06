@@ -9,20 +9,20 @@ public class DisplayScore : MonoBehaviour
 {
   
 
-    public Text[] FillRolls (List<int> rolls) {
+    public List<string> FillRolls (List<int> rolls) {
         string scoresString = FormatRolls(rolls);
-        Text[] rollTexts = new Text[scoresString.Length]; 
+        List<string> rollTexts = new List<string>();
         for (int i = 0; i < scoresString.Length; i++) {
-            rollTexts[i].text = scoresString[i].ToString();
+            rollTexts.Add(scoresString[i].ToString());
         }
 
         return rollTexts;
     }
 
-    public Text[] FillFrames (List<int> frames) {
-        Text[] frameTexts = new Text[frames.Count];
+    public List<string> FillFrames (List<int> frames) {
+        List<string> frameTexts = new List<string>();
         for (int i = 0; i < frames.Count; i++) {
-            frameTexts[i].text = frames[i].ToString();
+            frameTexts.Add(frames[i].ToString());
         }
 
         return frameTexts;
