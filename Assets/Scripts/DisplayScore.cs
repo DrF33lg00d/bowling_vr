@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class DisplayScore : MonoBehaviour
 {
-    public Text[] rollTexts, frameTexts;
-    
+  
 
     public Text[] FillRolls (List<int> rolls) {
         string scoresString = FormatRolls(rolls);
+        Text[] rollTexts = new Text[scoresString.Length]; 
         for (int i = 0; i < scoresString.Length; i++) {
             rollTexts[i].text = scoresString[i].ToString();
         }
@@ -20,6 +20,7 @@ public class DisplayScore : MonoBehaviour
     }
 
     public Text[] FillFrames (List<int> frames) {
+        Text[] frameTexts = new Text[frames.Count];
         for (int i = 0; i < frames.Count; i++) {
             frameTexts[i].text = frames[i].ToString();
         }

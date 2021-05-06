@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Exit from BowlingVR");
         // Stop Editor if starts in Editor
-        UnityEditor.EditorApplication.isPlaying = false;
+        if (UnityEditor.EditorApplication.isPlaying) UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 

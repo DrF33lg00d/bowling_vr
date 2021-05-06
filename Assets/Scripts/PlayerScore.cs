@@ -83,7 +83,7 @@ public class PlayerScore : MonoBehaviour
         return scoreNext1 + scoreNext2;
     }
 
-    public List<int> ScoreCumulative()
+    public int ScoreCumulative()
     {
         List<int> cumulativeScores = new List<int>();
         int runningTotal = 0;
@@ -94,7 +94,7 @@ public class PlayerScore : MonoBehaviour
             cumulativeScores.Add(runningTotal);
         }
 
-        return cumulativeScores;
+        return runningTotal;
     }
 
 }
