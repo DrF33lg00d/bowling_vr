@@ -9,6 +9,14 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public float soundVolume = 0.5f;
+    public AudioSource soundSource;
+
+    private void Start()
+    {
+        soundSource.volume = soundVolume;
+    }
+
     public void LoadGame()
     {
         SceneManager.LoadScene("FirstGameHall");
@@ -29,6 +37,8 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeBackSound(Slider sliderItem)
     {
-        Debug.Log("Changed sound on " + sliderItem.value);
+        soundVolume = sliderItem.value;
+        soundSource.volume = soundVolume;
+        Debug.Log("Changed sound on " + soundVolume);
     }
 }

@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
         _score = 0;
         scoreText.text = "0";
         
+        _setter.SetPinsToStart();
         _setter.ShowPins();
         _playerScore.rolls.Clear();
         ClearTableUI();
